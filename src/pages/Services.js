@@ -1,56 +1,96 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './App.css';
+import { AppBar, Box, Toolbar, Typography, Button, Container, Grid, Paper } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#990000',
+    },
+    secondary: {
+      main: '#cc0000',
+    },
+    background: {
+      default: '#1a1a1a',
+      paper: '#333',
+    },
+    text: {
+      primary: '#fff',
+      secondary: '#fff',
+    },
+  },
+});
 
 function Services() {
-  const navigate = useNavigate();
-
   return (
-    <div>
-      <header className="navbar">
-        <div className="logo">Sparkle Clean Car Wash</div>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/booking">Book Now</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <div className="services-container">
-        <button 
-          className="back-to-home"
-          onClick={() => navigate('/')}
-        >
-          Back to Home
-        </button>
-        <h2>Our Services</h2>
-        <div className="service-list">
-          <div className="service-item">
-            <h3>Basic Wash</h3>
-            <p>Includes exterior hand wash, drying, and tire cleaning.</p>
-          </div>
-          <div className="service-item">
-            <h3>Deluxe Wash</h3>
-            <p>Includes Basic Wash plus interior vacuuming and window cleaning.</p>
-          </div>
-          <div className="service-item">
-            <h3>Premium Wash</h3>
-            <p>Includes Deluxe Wash plus waxing and interior detailing.</p>
-          </div>
-          <div className="service-item">
-            <h3>Eco Wash</h3>
-            <p>Our environmentally friendly option using waterless cleaning technology.</p>
-          </div>
-        </div>
-      </div>
-      <footer className="footer">
-        <p>&copy; 2024 Sparkle Clean Car Wash. All rights reserved.</p>
-      </footer>
-    </div>
+    <ThemeProvider theme={theme}>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{ flexGrow: 1, cursor: 'pointer' }}
+            onClick={() => window.location.href = '/'}
+          >
+            Mobile Car Detailing
+            </Typography>
+      <Button color="inherit" href="/services">Services</Button>
+      <Button color="inherit" href="/booking">Book Now</Button>
+    </Toolbar>
+  </AppBar>
+  <Container maxWidth="md" style={{ marginTop: '100px' }}>
+    <Box textAlign="center" my={4}>
+      <Typography variant="h2" component="h1" gutterBottom>
+        Our Services
+      </Typography>
+    </Box>
+    <Grid container spacing={3} my={4}>
+      <Grid item xs={12} sm={6}>
+        <Paper elevation={3} style={{ padding: '20px', backgroundColor: '#333' }}>
+          <Typography variant="h4" component="h2" gutterBottom>
+            Basic Wash
+          </Typography>
+          <Typography variant="body1" component="p">
+            Includes exterior hand wash, drying, and tire cleaning.
+          </Typography>
+        </Paper>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Paper elevation={3} style={{ padding: '20px', backgroundColor: '#333' }}>
+          <Typography variant="h4" component="h2" gutterBottom>
+            Deluxe Wash
+          </Typography>
+          <Typography variant="body1" component="p">
+            Includes Basic Wash plus interior vacuuming and window cleaning.
+          </Typography>
+        </Paper>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Paper elevation={3} style={{ padding: '20px', backgroundColor: '#333' }}>
+          <Typography variant="h4" component="h2" gutterBottom>
+            Premium Wash
+          </Typography>
+          <Typography variant="body1" component="p">
+            Includes Deluxe Wash plus waxing and interior detailing.
+          </Typography>
+        </Paper>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Paper elevation={3} style={{ padding: '20px', backgroundColor: '#333' }}>
+          <Typography variant="h4" component="h2" gutterBottom>
+            Eco Wash
+          </Typography>
+          <Typography variant="body1" component="p">
+            Our environmentally friendly option using waterless cleaning technology.
+          </Typography>
+        </Paper>
+      </Grid>
+    </Grid>
+  </Container>
+  <Box component="footer" py={3} textAlign="center" bgcolor="#990000" color="white">
+    <Typography variant="body1">&copy; 2024 Mobile Car Detailing. All rights reserved.</Typography>
+  </Box>
+</ThemeProvider>
   );
 }
-
 export default Services;

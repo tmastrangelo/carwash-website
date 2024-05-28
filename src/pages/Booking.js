@@ -1,54 +1,124 @@
 import React from 'react';
-import './App.css';
+import { AppBar, Box, Toolbar, Typography, Button, Container, Paper, TextField, MenuItem } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#990000',
+    },
+    secondary: {
+      main: '#cc0000',
+    },
+    background: {
+      default: '#1a1a1a',
+      paper: '#333',
+    },
+    text: {
+      primary: '#fff',
+      secondary: '#fff',
+    },
+  },
+});
 
 function Booking() {
   return (
-    <div>
-      <header className="navbar">
-        <div className="logo">Sparkle Clean Car Wash</div>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/booking">Book Now</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <div className="booking-container">
-        <h1>Book Your Appointment</h1>
-        <form className="booking-form">
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-          
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-          
-          <label htmlFor="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone" required />
-          
-          <label htmlFor="service">Select Service:</label>
-          <select id="service" name="service" required>
-            <option value="basic">Basic Wash</option>
-            <option value="deluxe">Deluxe Wash</option>
-            <option value="premium">Premium Wash</option>
-            <option value="eco">Eco Wash</option>
-          </select>
-          
-          <label htmlFor="date">Preferred Date:</label>
-          <input type="date" id="date" name="date" required />
-          
-          <label htmlFor="time">Preferred Time:</label>
-          <input type="time" id="time" name="time" required />
-          
-          <button type="submit" className="submit-btn">Submit</button>
-        </form>
-      </div>
-      <footer className="footer">
-        <p>&copy; 2024 Sparkle Clean Car Wash. All rights reserved.</p>
-      </footer>
-    </div>
+    <ThemeProvider theme={theme}>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{ flexGrow: 1, cursor: 'pointer' }}
+            onClick={() => window.location.href = '/'}
+          >
+            Mobile Car Detailing
+          </Typography>
+          <Button color="inherit" href="/services">Services</Button>
+          <Button color="inherit" href="/booking">Book Now</Button>
+        </Toolbar>
+      </AppBar>
+      <Container maxWidth="sm" style={{ marginTop: '100px' }}>
+        <Paper elevation={3} style={{ padding: '20px', backgroundColor: '#333' }}>
+          <Typography variant="h4" component="h1" gutterBottom>
+            Book Your Appointment
+          </Typography>
+          <form>
+            <TextField
+              fullWidth
+              label="Name"
+              margin="normal"
+              variant="outlined"
+              InputLabelProps={{ style: { color: '#fff' } }}
+              InputProps={{ style: { color: '#fff' } }}
+            />
+            <TextField
+              fullWidth
+              label="Email"
+              margin="normal"
+              variant="outlined"
+              type="email"
+              InputLabelProps={{ style: { color: '#fff' } }}
+              InputProps={{ style: { color: '#fff' } }}
+            />
+            <TextField
+              fullWidth
+              label="Phone"
+              margin="normal"
+              variant="outlined"
+              type="tel"
+              InputLabelProps={{ style: { color: '#fff' } }}
+              InputProps={{ style: { color: '#fff' } }}
+            />
+            <TextField
+              fullWidth
+              select
+              label="Select Service"
+              margin="normal"
+              variant="outlined"
+              defaultValue=""
+              InputLabelProps={{ style: { color: '#fff' } }}
+              InputProps={{ style: { color: '#fff' } }}
+            >
+              <MenuItem value="basic">Basic Wash</MenuItem>
+              <MenuItem value="deluxe">Deluxe Wash</MenuItem>
+              <MenuItem value="premium">Premium Wash</MenuItem>
+              <MenuItem value="eco">Eco Wash</MenuItem>
+            </TextField>
+            <TextField
+              fullWidth
+              label="Preferred Date"
+              margin="normal"
+              variant="outlined"
+              type="date"
+              InputLabelProps={{ shrink: true, style: { color: '#fff' } }}
+              InputProps={{ style: { color: '#fff' } }}
+            />
+            <TextField
+              fullWidth
+              label="Preferred Time"
+              margin="normal"
+              variant="outlined"
+              type="time"
+              InputLabelProps={{ shrink: true, style: { color: '#fff' } }}
+              InputProps={{ style: { color: '#fff' } }}
+            />
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              type="submit"
+              style={{ marginTop: '20px' }}
+            >
+              Submit
+            </Button>
+          </form>
+        </Paper>
+      </Container>
+      <Box component="footer" py={3} textAlign="center" bgcolor="#990000" color="white">
+        <Typography variant="body1">&copy; 2024 Mobile Car Detailing. All rights reserved.</Typography>
+      </Box>
+    </ThemeProvider>
   );
 }
 
