@@ -35,7 +35,7 @@ function Home() {
             sx={{ flexGrow: 1, cursor: 'pointer' }}
             onClick={() => navigate('/')}
           >
-            Mobile Car Detailing
+            Sunshine Detailing
           </Typography>
           <Button color="inherit" href="/services">Services</Button>
           <Button color="inherit" href="/booking">Book Now</Button>
@@ -67,7 +67,7 @@ function Home() {
         />
         <Box sx={{ position: 'relative' }}>
           <Typography variant="h2" component="h1" gutterBottom>
-            Welcome to Mobile Car Detailing
+            Welcome to Sunshine Detailing
           </Typography>
           <Typography variant="h5" component="p" gutterBottom>
             Your trusted partner in keeping your vehicle clean and shining.
@@ -91,7 +91,7 @@ function Home() {
                 About Us
               </Typography>
               <Typography variant="body1" component="p">
-                At Mobile Car Detailing, we pride ourselves on providing top-quality car cleaning services. Our team of professionals ensures that every vehicle leaves our premises looking brand new. We use the latest technology and eco-friendly products to deliver exceptional results.
+                At Sunshine Detailing, we pride ourselves on providing top-quality car cleaning services. Our professionally trained staff ensures that every vehicle comes out looking brand new. We use the latest technology and eco-friendly products to deliver exceptional results.
               </Typography>
             </Paper>
           </Grid>
@@ -101,14 +101,14 @@ function Home() {
                 Contact Us
               </Typography>
               <Typography variant="body1" component="p">
-                Have questions? Get in touch with us at (123) 456-7890 or visit us at 123 Carwash Lane, Clean City.
+                Have questions? Get in touch with us at (239) 293-8511.
               </Typography>
             </Paper>
           </Grid>
         </Grid>
       </Container>
       <Box component="footer" py={3} textAlign="center" bgcolor="#990000" color="white">
-        <Typography variant="body1">&copy; 2024 Mobile Car Detailing. All rights reserved.</Typography>
+        <Typography variant="body1">&copy; 2024 Sunshine Detailing. All rights reserved.</Typography>
       </Box>
     </ThemeProvider>
   );

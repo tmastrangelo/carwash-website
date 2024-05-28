@@ -32,7 +32,7 @@ function Booking() {
             sx={{ flexGrow: 1, cursor: 'pointer' }}
             onClick={() => window.location.href = '/'}
           >
-            Mobile Car Detailing
+            Sunshine Detailing
           </Typography>
           <Button color="inherit" href="/services">Services</Button>
           <Button color="inherit" href="/booking">Book Now</Button>
@@ -116,7 +116,7 @@ function Booking() {
         </Paper>
       </Container>
       <Box component="footer" py={3} textAlign="center" bgcolor="#990000" color="white">
-        <Typography variant="body1">&copy; 2024 Mobile Car Detailing. All rights reserved.</Typography>
+        <Typography variant="body1">&copy; 2024 Sunshine Detailing. All rights reserved.</Typography>
       </Box>
     </ThemeProvider>
   );

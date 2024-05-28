@@ -32,7 +32,7 @@ function Services() {
             sx={{ flexGrow: 1, cursor: 'pointer' }}
             onClick={() => window.location.href = '/'}
           >
-            Mobile Car Detailing
+            Sunshine Detailing
             </Typography>
       <Button color="inherit" href="/services">Services</Button>
       <Button color="inherit" href="/booking">Book Now</Button>
@@ -71,24 +71,24 @@ function Services() {
             Premium Wash
           </Typography>
           <Typography variant="body1" component="p">
-            Includes Deluxe Wash plus waxing and interior detailing.
+            Includes Deluxe Wash plus interior detailing.
           </Typography>
         </Paper>
       </Grid>
       <Grid item xs={12} sm={6}>
         <Paper elevation={3} style={{ padding: '20px', backgroundColor: '#333' }}>
           <Typography variant="h4" component="h2" gutterBottom>
-            Eco Wash
+            Ultimate Wash
           </Typography>
           <Typography variant="body1" component="p">
-            Our environmentally friendly option using waterless cleaning technology.
+            Includes everything plus exterior detailing.
           </Typography>
         </Paper>
       </Grid>
     </Grid>
   </Container>
   <Box component="footer" py={3} textAlign="center" bgcolor="#990000" color="white">
-    <Typography variant="body1">&copy; 2024 Mobile Car Detailing. All rights reserved.</Typography>
+    <Typography variant="body1">&copy; 2024 Sunshine Detailing. All rights reserved.</Typography>
   </Box>
 </ThemeProvider>
   );
